@@ -9,6 +9,7 @@ html {
 /* Globales */
 body{
     background-color: #DDDDDD;
+    font-family: 'Krub', sans-serif;
 }
 .contenedor{
     max-width: 120rem;
@@ -16,6 +17,9 @@ body{
 }
 img{
     max-width: 100%;
+}
+h1, h2{
+    margin: 0;
 }
 h2{
     font-size: 2.4rem;
@@ -32,6 +36,9 @@ h2{
 .boton-contacto{
     font-size: 2rem;
     padding: 1rem 3rem;
+    display: inline-block;
+    margin-top: 2rem;
+    border-radius: 1rem;
 }
 .boton-enviar{
     font-size: 1.7rem;
@@ -53,7 +60,7 @@ h2{
 .navegacion a{
     color: #000000;
     text-decoration: none;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     padding: 1.5rem;
     display: block;
     text-align: center;
@@ -65,21 +72,36 @@ h2{
     background-position: center center;
     background-size: cover;
     height: 70vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner::after{
+    content: '';
+    background-color: rgba(0, 0, 0, .7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 .contenido-banner{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    position: relative;
+    z-index: 1;
     text-align: center;
 }
 .contenido-banner h1{
     color: #ffffff;
-    font-size: 4rem;
+    font-size: 3.2rem;
 }
 .contenido-banner p{
     color: #ffffff;
-    font-size: 3rem;
+    font-size: 2rem;
+}
+.contenido-banner i{
+    font-size: 4rem;
+    color: #F2BB16;
 }
 
 /* Servicios */
@@ -95,6 +117,7 @@ main{
     background-color: #ffffff;
     border-radius: 1rem;
     padding: 2rem;
+    box-shadow: 0 1rem 2.1rem -0.9rem rgba(0, 0, 0, .7);
 }
 .contenido-principal h2{
     text-align: center;
@@ -105,12 +128,16 @@ main{
 @media(min-width: 768px) {
     .servicios{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
     .servicio{
-        flex-basis: calc(33.3% - 1rem);
-        padding: 0 1rem;
+        flex: 0 0 calc(33.3% - 1rem);
     }
+}
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .servicio h2{
     color: #007680;
@@ -118,8 +145,20 @@ main{
     font-size: 3rem;
 }
 .servicio p{
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     line-height: 2;
+}
+.icono{
+    background-color: #F2BB16;
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 50%;
+}
+.icono i{
+    font-size: 3rem;
 }
 
 /* Contacto */
@@ -130,10 +169,11 @@ main{
     margin: 0 auto;
     padding: 3rem;
 }
-legend{
+.contacto p{
     font-size: 2.3rem;
-    color: #ffffff;
-    margin-bottom: 2rem;
+    color: #F2BB16;
+    margin-bottom: 3rem;
+    text-align: center;
 }
 label{
     display: inline-block;
